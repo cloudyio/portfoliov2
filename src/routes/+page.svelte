@@ -6,12 +6,16 @@
 
 <div class="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
 
+  <div class="h-36 w-36">
+    <img src="https://avatars.githubusercontent.com/u/cloudyio?v=4" alt="Cloudy" class="h-full w-full object-cover rounded-full bg-black" />
+  </div>
+
   <h1 class="text-7xl font-semibold">
     Cloudy
   </h1>
 
   <h2 class="font-semibold text-3xl text-center">
-    Full Stack Dev
+    Software Dev
   </h2>
 
   <div class="flex mt-4">
