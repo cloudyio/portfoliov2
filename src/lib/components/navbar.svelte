@@ -1,15 +1,52 @@
 <script>
     import sun from "$lib/assets/sun.svg";
-</script>
-
-<nav class="h-16 mx-5 mt-3 rounded-full bg-[#D9D9D9] relative text-2xl font-inter ">
-    <a href="https://example.com" class="absolute transform top-1/2 -translate-y-1/2 ml-5">
-        <img src={sun} class="h-10 w-10" alt="sun" />
-    </a>
-
-    <div class="absolute right-5 top-1/2 transform -translate-y-1/2 md:text-base text-4xl">
-        <a href="#" class="mr-4 font-semibold text-2xl">My Projects</a>
-        <a href="#" class="mr-4 font-semibold text-2xl">About Me</a>
-        <a href="#" class="font-semibold mr-4 text-2xl">Contact</a>
+    import moon from "$lib/assets/moon.svg";
+  
+    let isDarkMode = false;
+  
+    if (typeof window !== 'undefined') {
+      isDarkMode = localStorage.getItem('theme') === 'dark';
+  
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  
+    function toggleDarkMode() {
+      isDarkMode = !isDarkMode;
+  
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
+  
+  <nav class="h-16 mx-4 rounded-full bg-[#D9D9D9] dark:bg-[#292929] flex items-center justify-between px-6 text-xl font-inter transition-colors duration-500 ease-in-out">
+    <button class="relative flex items-center" on:click={toggleDarkMode}>
+      <img
+        src={moon}
+        class="h-9 w-9 transition-transform transform duration-500 ease-in-out 
+          {isDarkMode ? 'scale-0 rotate-180 opacity-0' : 'scale-100 rotate-0 opacity-100'}"
+        alt="moon"
+      />
+      <img
+        src={sun}
+        class="h-9 w-9 absolute transition-transform transform duration-500 ease-in-out 
+          {isDarkMode ? 'scale-100 rotate-0 opacity-100' : 'scale-0 rotate-180 opacity-0'}"
+        alt="sun"
+      />
+    </button>
+  
+    <div class="flex items-center space-x-6 md:text-lg text-xl">
+      <a href="#" class="font-semibold">My Projects</a>
+      <a href="#" class="font-semibold">About Me</a>
+      <a href="#" class="font-semibold">Contact</a>
     </div>
-</nav>
+  </nav>
+  

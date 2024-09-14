@@ -3,6 +3,8 @@
     import Navbar from "$lib/components/navbar.svelte";
 </script>
   
-<Navbar />
 
-<slot />
+<div class="dark: dark:bg-[#191919] h-full pt-4 dark:text-[#F3F3F3] transition-colors duration-500 ease-in-out">
+    <Navbar />
+    <slot />
+</div>

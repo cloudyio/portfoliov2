@@ -1,12 +1,10 @@
 <script>
-  import github from "$lib/assets/github.svg";
-  import link from "$lib/assets/link.svg";
-  import mail from "$lib/assets/mail.svg";
+  import Github from "$lib/assets/github.svelte";
+  import Link from "$lib/assets/link.svelte";
+  import Mail from "$lib/assets/mail.svelte";
 </script>
 
-
-<div class="flex flex-col justify-center items-center h-[calc(100vh-78px)]">
-
+<div class="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
 
   <h1 class="text-7xl font-semibold">
     Cloudy
@@ -17,15 +15,16 @@
   </h2>
 
   <div class="flex mt-4">
-    <a href="" >
-      <img src={github} class="h-10 w-10 mx-2" alt="github" />
+    <a href="https://github.com/cloudyio">
+      <Github />
     </a>
-    <a href="" >
-      <img src={mail} class="h-10 w-10 mx-2" alt="github" />
+    <a href="#">
+      <Mail />
     </a>
-    <a href="" >
-      <img src={link} class="h-10 w-8 mx-4" alt="github" />
+    <a href="#">
+      <Link />
     </a>
   </div>
 
 </div>
+
