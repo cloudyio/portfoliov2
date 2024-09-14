@@ -4,7 +4,7 @@
 </script>
   
 
-<div class="dark: dark:bg-[#191919] h-full pt-4 dark:text-[#F3F3F3] transition-colors duration-500 ease-in-out">
+<div class="dark: dark:bg-[#191919] h-full pt-4 dark:text-[#F3F3F3] transition-colors ease-in-out">
     <Navbar />
     <slot />
 </div>
